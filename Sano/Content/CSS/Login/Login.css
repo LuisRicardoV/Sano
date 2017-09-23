@@ -1,0 +1,82 @@
+﻿/* BACKGROUNDS */
+.bg {
+  background-color:#C1D0D8 ;
+}
+
+h3, p {
+
+color:#000;
+
+}
+
+.client-detail .vertical-timeline-icon.gray-bg {
+  color: #a7aaab;
+}
+
+.middle-box {
+    max-width: 400px;
+    z-index: 100;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+.loginscreen.middle-box {
+     width: 300px; 
+}
+
+.text-center {
+    text-align: center;
+}
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+
+.logo-name {
+    color: #e6e6e6;
+    font-size: 180px;
+    font-weight: 800;
+    letter-spacing: -10px;
+    margin-bottom: 0px;
+}
+
+.btn-white {
+    color: inherit;
+    background: white;
+    border: 1px solid #e7eaec;
+}
+.btn-white:hover, .btn-white:focus, .btn-white:active, .btn-white.active, .open .dropdown-toggle.btn-white {
+    color: inherit;
+    border: 1px solid #d2d2d2;
+}
+.btn:hover, .btn:focus {
+    color: #333333;
+    text-decoration: none;
+}
+
+.m-b {
+    margin-bottom: 15px;
+}
+.full-width {
+    width: 100% !important;
+}
+.btn-primary {
+      background-color: #418CC0;
+    border-color: #418CC0;
+    color: #FFF;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+  background-color: #3D6B89;
+    border-color: #3D6B89;
+    color: #FFF;
+}
+
+
+.help-block.login {
+font-size:12px;
+text-align:left;
+}

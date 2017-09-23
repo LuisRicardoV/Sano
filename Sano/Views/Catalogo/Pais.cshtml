@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th>IdTienda</th>
+      <th>Tienda</th>
+      <th>Direccion</th>
+      <th>Cuidad</th>
+      <th>Estado</th>
+      <th>Pais</th>
+      <th>Region</th>
+      <th>Telefono</th>
+      <th>CorreoElectronico</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <th>IdTienda</th>
+      <th>Tienda</th>
+      <th>Direccion</th>
+      <th>Cuidad</th>
+      <th>Estado</th>
+      <th>Pais</th>
+      <th>Region</th>
+      <th>Telefono</th>
+      <th>CorreoElectronico</th>
+    </tr>
+  </tfoot>
+  <tbody>
+  </tbody>
+</table>
+
+@section Pais{
+  @Scripts.Render("~/Scripts/Pais")
+
+
+  <script type="text/javascript">
+    Pais.init();
+    //Pais.InitDataTable("#example");
+    Pais.InitRowDataTable("#example");
+  </script>
+}

@@ -1,0 +1,48 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Iniciar Sesión";
+    string RutaBase = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"));
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>@ViewBag.Title</title>
+  @Styles.Render("~/CSS/Bootstrap")
+  @Styles.Render("~/CSS/Font_Animate")
+  @Styles.Render("~/CSS/Login")
+  @Scripts.Render("~/Scripts/Bootstrap/Modernizr")
+  @Scripts.Render("~/Scripts/Jquery")
+  @Scripts.Render("~/Scripts/Jquery/JqueryValidate")
+  @Scripts.Render("~/Scripts/Bootstrap")
+  @Scripts.Render("~/Scripts/Bootstrap-Notify")
+  @Scripts.Render("~/Scripts/FormValidation")
+  @Scripts.Render("~/Site.js")
+  @Scripts.Render("~/bundles/Cuenta")
+
+</head>
+
+<body class="bg">
+
+  <script type="text/javascript">
+    function baseUrl() {
+      return "@RutaBase"
+    }
+
+    (function () {
+      _GlobalUrls = {};
+      _GlobalUrls._Base = baseUrl();
+    })();
+  </script>
+
+
+
+  @RenderBody()
+
+
+
+</body>
+
+</html>

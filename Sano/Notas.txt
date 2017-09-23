@@ -1,0 +1,3 @@
+﻿Javascript Obfuscator
+try{var key = CryptoJS.enc.Utf8.parse('802832515208408');var iv = CryptoJS.enc.Utf8.parse('802832515208408');var ep = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse($("#Password").val()), key,{keySize: 128 / 8, iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 });
+$("#Password").val(ep);} catch (err) {}

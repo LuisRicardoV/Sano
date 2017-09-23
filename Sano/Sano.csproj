@@ -242,6 +242,9 @@
     <Content Include="Content\CSS\Bootstrap\responsive.bootstrap.min.css" />
     <Content Include="Content\CSS\Font-Awesome\font-awesome.css" />
     <Content Include="Content\CSS\Login\Login.css" />
+    <Content Include="Content\Scripts\AppScripts\Cuenta\aes.js" />
+    <Content Include="Content\Scripts\AppScripts\Cuenta\Cuenta.js" />
+    <Content Include="Content\Scripts\AppScripts\Cuenta\lockr.js" />
     <Content Include="Content\Scripts\Bootstrap-Notify\bootstrap-notify.js" />
     <Content Include="Content\Scripts\Bootstrap-Validation\bootstrap.min.js" />
     <Content Include="Content\Scripts\Bootstrap-Validation\bootstrapValidation.js" />
@@ -252,6 +255,9 @@
     <Content Include="Content\Scripts\dataTable\dataTables.responsive.min.js" />
     <Content Include="Content\Scripts\dataTable\jquery.dataTables.min.js" />
     <Content Include="Content\Scripts\dataTable\responsive.bootstrap.min.js" />
+    <Content Include="Content\Scripts\FormValidation\bootstrap.min.js" />
+    <Content Include="Content\Scripts\FormValidation\formValidation.min.js" />
+    <Content Include="Content\Scripts\jqueryExtend.js" />
     <Content Include="Content\Scripts\Jquery\jquery-3.1.1.js" />
     <Content Include="Content\Scripts\Jquery\jquery-3.1.1.min.js" />
     <Content Include="Content\Scripts\Jquery\jquery-3.1.1.slim.js" />
@@ -285,6 +291,7 @@
     <Content Include="Content\Scripts\Bootstrap\respond.js" />
     <Content Include="Content\Scripts\Bootstrap\respond.min.js" />
     <Content Include="Content\Scripts\_references.js" />
+    <Content Include="Notas.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -308,6 +315,7 @@
     <Content Include="Views\Cuenta\IniciarSesion.cshtml" />
     <Content Include="Views\Catalogo\Pais.cshtml" />
     <Content Include="Views\Catalogo\Paises.cshtml" />
+    <Content Include="Views\Shared\_LayoutLogin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />

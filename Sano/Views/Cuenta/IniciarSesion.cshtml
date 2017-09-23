@@ -2,43 +2,32 @@
 @model CuentaModel
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
     ViewBag.Title = "Iniciar Sesión";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>@ViewBag.Title</title>
-  @Styles.Render("~/CSS/Bootstrap")
-  @Styles.Render("~/CSS/Font_Animate")
-  @Styles.Render("~/CSS/Login")
-  @Scripts.Render("~/Scripts/Bootstrap/Modernizr")
 
-</head>
-<body class="bg">
-   <div class="middle-box text-center loginscreen animated bounceInDown">
+<div class="middle-box text-center loginscreen animated bounceInDown">
+  <div>
     <div>
-      <div>
-        <!--LOGO-->
-        <h1 class="logo-name"><img src="img/logo_lasalitas_Login.png" /></h1>
-      </div>
-      <h3>Sano</h3>
-      <p>Iniciar Sesion.</p>
-
-      @using (Html.BeginForm("IniciarSesion", "Cuenta", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form", @id = "IniciarSesion" }))
-      {
-          @Html.AntiForgeryToken()
-
-          @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+      <!--LOGO-->
+      <h1 class="logo-name"><img src="img/logo_lasalitas_Login.png" /></h1>
+    </div>
+    @*<h3>Sano</h3>*@
+    <p>Iniciar Sesion.</p>
 
 
-          <div class="form-group">
-            @Html.TextBoxFor(m => m.Usuario, new { @class = "form-control", @Placeholder = "Usuario" })
-            @Html.ValidationMessageFor(m => m.Usuario, "", new { @class = "text-danger" })
-          </div>
+    @using (Html.BeginForm("IniciarSesion", "Cuenta", FormMethod.Post, new { id = "IniciarSesion", @enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+        <div class="form-group">
+          @Html.TextBoxFor(m => m.Usuario, new { @class = "form-control", @Placeholder = "Usuario" })
+          @Html.ValidationMessageFor(m => m.Usuario, "", new { @class = "text-danger" })
+        </div>
 
           <div class="form-group">
             @Html.PasswordFor(m => m.Password, new { @class = "form-control", @Placeholder = "Contraseña" })
@@ -46,34 +35,30 @@
           </div>
 
           <div>
-            <input type="submit" value="Iniciar" class="btn btn-primary block full-width m-b LoginIn" />
-            
-            
+            <button id="btnIngresar" class="btn btn-primary block full-width m-b LoginIn">Iniciar</button>
+
             <a href="#"><small>¿Olvidaste tu contraseña?</small></a>
             <p class="text-muted text-center"><small>¿No recuerdas tu usuario?</small></p>
             @*<a class="btn btn-sm btn-white btn-block" href="register.html">Crear una cuenta</a>*@
-            <p class="m-t"> <small>Business &copy; @DateTime.Now.Year</small> </p>
+            <p class="m-t"> <small>Bu &copy; @DateTime.Now.Year</small> </p>
           </div>
 
-      }
-    </div>
+    }
   </div>
-
-
-  @Scripts.Render("~/Scripts/Jquery")
-  @Scripts.Render("~/Scripts/Jquery/JqueryValidate")
-  @Scripts.Render("~/Scripts/Bootstrap")
-  @Scripts.Render("~/Scripts/Bootstrap-Notify")
-  @Scripts.Render("~/Site.js")
-
-</body>
+</div>
 
 
 
-</html>
-
-
-
+<script>
+  $(function () {
+    Cuenta.Init({
+      UrlHome: '@Url.Action("Index", "Home")',
+      UrlLogin: '@Url.Action("IniciarSesion", "Cuenta")',
+      UrlLogOff: '@Url.Action("CerrarSesion", "Cuenta")',
+      UrlRegister: '@Url.Action("Register", "Cuenta")',
+    });
+  });
+</script>
 
 
 

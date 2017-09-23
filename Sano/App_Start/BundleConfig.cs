@@ -11,9 +11,9 @@ namespace Sano
             #region CSS
             bundles.Add(new StyleBundle("~/CSS/Bootstrap").Include(
                     "~/Content/CSS/Bootstrap/bootstrap.min.css"
-                    
+
                     ));
-            
+
 
             bundles.Add(new ScriptBundle("~/CSS/Font_Animate").Include(
                          "~/Content/CSS/Font-Awesome/font-awesome.css",
@@ -34,42 +34,54 @@ namespace Sano
 
             #region Javascript
             bundles.Add(new ScriptBundle("~/Scripts/Jquery").Include(
-                     "~/Content/Scripts/Jquery/jquery-{version}.js"));
+            "~/Content/Scripts/Jquery/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/Scripts/Jquery/JqueryValidate").Include(
-                       "~/Content/Scripts/Jquery/jquery.validate*"));
-
+            "~/Content/Scripts/Jquery/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/Scripts/Bootstrap").Include(
-                "~/Content/Scripts/Bootstrap/bootstrap.min.js",
-                "~/Content/Scripts/Bootstrap/respond.js"));
+            "~/Content/Scripts/Bootstrap/bootstrap.min.js",
+            "~/Content/Scripts/Bootstrap/respond.js"));
 
             bundles.Add(new ScriptBundle("~/Scripts/Bootstrap/Modernizr").Include(
-                      "~/Content/Scripts/Bootstrap/modernizr-*"));
+            "~/Content/Scripts/Bootstrap/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/Scripts/Bootstrap-Notify").Include(
-             "~/Content/Scripts/bootstrap-notify.js"));
+            "~/Content/Scripts/Bootstrap-Notify/bootstrap-notify.js"));
 
             bundles.Add(new ScriptBundle("~/Scripts/Bootstrap-Validation").Include(
-             "~/Content/Scripts/Bootstrap-Validation/validator.min.js"));
+            "~/Content/Scripts/Bootstrap-Validation/validator.min.js"));
 
             bundles.Add(new ScriptBundle("~/Scripts/dataTable").Include(
-          "~/Content/Scripts/dataTable/jquery.dataTables.min.js",
-          "~/Content/Scripts/dataTable/dataTables.bootstrap.min.js",
-           "~/Content/Scripts/dataTable/dataTables.responsive.min.js",
+            "~/Content/Scripts/dataTable/jquery.dataTables.min.js",
+            "~/Content/Scripts/dataTable/dataTables.bootstrap.min.js",
+            "~/Content/Scripts/dataTable/dataTables.responsive.min.js",
             "~/Content/Scripts/dataTable/responsive.bootstrap.min.js"
-          ));
+            ));
 
-           
+            bundles.Add(new ScriptBundle("~/Scripts/FormValidation").Include(
+            "~/Content/Scripts/FormValidation/formValidation.min.js",
+             "~/Content/Scripts/FormValidation/bootstrap.min.js"));
+
+
 
             bundles.Add(new ScriptBundle("~/Site.js").Include(
-                   "~/Content/Scripts/Site.js"));
+            "~/Content/Scripts/Site.js",
+            "~/Content/Scripts/jqueryExtend.js"));
 
             #endregion
 
             #region Modulos Javascript
             bundles.Add(new StyleBundle("~/Scripts/Pais").Include(
-           "~/Content/Scripts/Catalogo/Pais.js"));
+            "~/Content/Scripts/Catalogo/Pais.js"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/Cuenta").Include(
+            "~/Content/Scripts/AppScripts/Cuenta/aes.js",
+            "~/Content/Scripts/AppScripts/Cuenta/lockr.js",
+            "~/Content/Scripts/AppScripts/Cuenta/Cuenta.js"
+            ));
+
             #endregion
         }
     }

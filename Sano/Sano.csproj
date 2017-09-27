@@ -241,13 +241,22 @@
     <Content Include="Content\CSS\Bootstrap\dataTables.bootstrap.min.css" />
     <Content Include="Content\CSS\Bootstrap\responsive.bootstrap.min.css" />
     <Content Include="Content\CSS\Font-Awesome\font-awesome.css" />
+    <Content Include="Content\CSS\Layout\Core.css" />
+    <Content Include="Content\CSS\Layout\Icons.css" />
+    <Content Include="Content\CSS\Layout\Menu.css" />
+    <Content Include="Content\CSS\Layout\Resposive.css" />
     <Content Include="Content\CSS\Login\Login.css" />
+    <Content Include="Content\Fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="Content\Scripts\AppScripts\Cuenta\aes.js" />
     <Content Include="Content\Scripts\AppScripts\Cuenta\Cuenta.js" />
     <Content Include="Content\Scripts\AppScripts\Cuenta\lockr.js" />
     <Content Include="Content\Scripts\Bootstrap-Notify\bootstrap-notify.js" />
     <Content Include="Content\Scripts\Bootstrap-Validation\bootstrap.min.js" />
     <Content Include="Content\Scripts\Bootstrap-Validation\bootstrapValidation.js" />
+    <Content Include="Content\Fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Content\Fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Content\Fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Content\Fonts\Material-Design-Iconic-Font.woff" />
     <None Include="Content\Scripts\Jquery\jquery-3.1.1.intellisense.js" />
     <Content Include="Content\Scripts\Bootstrap-Validation\validator.min.js" />
     <Content Include="Content\Scripts\Catalogo\Pais.js" />
@@ -304,7 +313,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Shared\_Layout%28RESPALDO%29.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
@@ -316,6 +325,7 @@
     <Content Include="Views\Catalogo\Pais.cshtml" />
     <Content Include="Views\Catalogo\Paises.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Helpers\" />

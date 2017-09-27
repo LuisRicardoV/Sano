@@ -309,15 +309,10 @@
         },
         utilsValidation: function () {
             var fields = {};
-            //var selects = [];
-
             var formId = $(this).attr("id");
-
             $.each($("#{0} input[type=date][data-val], input[type=text][data-val], input[type=radio][data-val], input[type=checkbox][data-val], textarea[data-val], select[data-val],input[type=password][data-val]".format(formId)), function (key, value) {
                 var dataAttributes = $(value).data();
                 if (dataAttributes.val.toString().toUpperCase() == "TRUE") {
-                    //debugger
-                    //var isSelect = ( dataAttributes.liveSearch != undefined ? true : false);
                     var validate = {};
                     var validators = {};
                     $.each(dataAttributes, function (key, attr) {
@@ -368,30 +363,13 @@
                     validators['validators'] = validate;
                     var nameItem = value.name;
                     fields[nameItem] = validators;
-                    //if (isSelect) {
-                    //debugger;
-                    //    selects.push(value.id);
-                    //}
                 }
             });
 
             var errorContainer = $(this).attr("errorcontainer");
 
             $(this).formValidation({
-                //framework: 'bootstrap',
-                //excluded: [':disabled', ':hidden', ':not(:visible)', '.ignoreField'],
                 excluded: [':disabled', '.ignoreField', ':not(:visible):not(.selectpicker)'],
-                /*excluded: function($field, validator) {
-                    debugger
-                    if ($field.is(":disabled") || $field.hasClass("ignoreField"))
-                        return false;
-
-                    if ($field.is(":not(:visible)"))
-                        if(!$field.hasClass("selectpicker"))
-                        return false;
-
-                    return true;    // or false
-                },*/
                 icon: {
                     valid: 'glyphicon glyphicon-ok',
                     invalid: 'glyphicon glyphicon-remove',
@@ -402,19 +380,6 @@
                     container: errorContainer
                 }
             });
-
-            /*
-            debugger;
-            $(selects).each(function (index, _id) {
-
-                $('#' + formId).find('[id="' + _id + '"]')
-                                                    .selectpicker()
-                                                    .change(function (e) {
-                                                        $('#' + formId).formValidation('revalidateField', _id);
-                                                    })
-                                                    .end();
-
-            });*/
 
             $(this).on('submit', function () { if (typeof $(this).data('submit') === 'undefined') return false; });
             $(this).find("i").each(function () {
@@ -432,7 +397,6 @@
             return response;
         },
         ajaxLoad: function (parameters) {
-            //debugger;
             var self = this;
             var $element = $(self);
             if ($(".isloading-overlay").length == 0)

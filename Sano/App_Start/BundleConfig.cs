@@ -5,7 +5,6 @@ namespace Sano
 {
     public class BundleConfig
     {
-        // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
             #region CSS
@@ -16,7 +15,6 @@ namespace Sano
 
 
             bundles.Add(new ScriptBundle("~/CSS/Font_Animate").Include(
-                         "~/Content/CSS/Font-Awesome/font-awesome.css",
                          "~/Content/CSS/Animate/animate.css",
                          "~/Content/CSS/Bootstrap/dataTables.bootstrap.min.css",
                           "~/Content/CSS/Bootstrap/responsive.bootstrap.min.css"
@@ -25,6 +23,13 @@ namespace Sano
 
             bundles.Add(new ScriptBundle("~/Site").Include(
                  "~/Content/CSS/Site.css"));
+
+            bundles.Add(new ScriptBundle("~/Layout").Include(
+               "~/Content/CSS/Layout/Icons.css",
+                "~/Content/CSS/Layout/Resposive.css",
+                "~/Content/CSS/Layout/Core.css",
+                "~/Content/CSS/Layout/Menu.css"
+               ));
 
 
             bundles.Add(new StyleBundle("~/CSS/Login").Include(
@@ -49,8 +54,8 @@ namespace Sano
             bundles.Add(new ScriptBundle("~/Scripts/Bootstrap-Notify").Include(
             "~/Content/Scripts/Bootstrap-Notify/bootstrap-notify.js"));
 
-            bundles.Add(new ScriptBundle("~/Scripts/Bootstrap-Validation").Include(
-            "~/Content/Scripts/Bootstrap-Validation/validator.min.js"));
+            //bundles.Add(new ScriptBundle("~/Scripts/Bootstrap-Validation").Include(
+            //"~/Content/Scripts/Bootstrap-Validation/validator.min.js"));
 
             bundles.Add(new ScriptBundle("~/Scripts/dataTable").Include(
             "~/Content/Scripts/dataTable/jquery.dataTables.min.js",

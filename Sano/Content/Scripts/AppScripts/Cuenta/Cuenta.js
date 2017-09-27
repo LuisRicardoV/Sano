@@ -3,7 +3,9 @@ window.Cuenta = {
     Init: function (urls) {
         debugger;
         $.extend(this, urls);
+
         $("#{0}".format("IniciarSesion")).utilsValidation();
+
         window.Cuenta.Init_Buttons();
         window.Cuenta.Init_EnterKey();
     },
@@ -12,33 +14,17 @@ window.Cuenta = {
     },
     Init_EnterKey: function () {
         $("#Usuario").keypress(function (e) {
-            if (e.charCode == 13) {
-                $("#Password").focus();
-            }
-        });
-        $("#Usuario").keypress(function (e) {
-            if (e.charCode == 13) {
-                var e = $.Event('keyup');
-                e.which = 13;
-                $(this).trigger(e);
+            if (e.charCode == 13 || e.charCode == 9) {
                 $("#Password").focus();
             }
         }).keyup(function (e) {
-            var email = $(this).val();
-            if (validateEmail(email)) {
-                $('.glyphicon-ok').css("color", "#3c763d");
-            } else {
-                $('.glyphicon-remove').css("color", "#a94442");
-            }
-        }).change(function () {
-            var email = $(this).val();
-            if (validateEmail(email)) {
+            if ($(this).val() != "") {
                 $('.glyphicon-ok').css("color", "#3c763d");
             } else {
                 $('.glyphicon-remove').css("color", "#a94442");
             }
         });
-
+      
         $("#Password").keypress(function (e) {
             if (e.charCode == 13 || e.charCode == 9) {
                 $("#btnIngresar").focus();

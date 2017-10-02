@@ -1,4 +1,15 @@
-﻿<!DOCTYPE html>
+﻿@{
+    var claimsIdentity = User.Identity as System.Security.Claims.ClaimsIdentity;
+    var imgSrc = "";
+    var Nombre = "";
+    if (claimsIdentity != null)
+    {
+      var imagenUsuario = claimsIdentity.Claims.Where(x => x.Type == "imagenUsuario").Select(x => x.Value).SingleOrDefault();
+      Nombre = claimsIdentity.Claims.Where(x => x.Type == "Nombre").Select(x => x.Value).SingleOrDefault();
+      imgSrc = String.Format("data:image/gif;base64,{0}", imagenUsuario);
+    }
+}
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8" />
@@ -17,7 +28,7 @@
     <div class="topbar">
       <!-- Logo -->
       <div class="topbar-left">
-        <a href="index.html" class="logo"><span>Admin<span>to</span></span><i class="zmdi zmdi-layers"></i></a>
+        <a href="index.html" class="logo"><span>San<span>to</span></span><i class="zmdi zmdi-layers"></i></a>
       </div>
       <!-- Button mobile view to collapse sidebar menu -->
       <div class="navbar navbar-default" role="navigation">
@@ -30,7 +41,7 @@
               </button>
             </li>
             <li>
-              <h4 class="page-title">Dashboard</h4>
+              <h4 class="page-title">@ViewBag.Title</h4>
             </li>
           </ul>
           <!-- Right(Notification and Searchbox -->
@@ -40,9 +51,7 @@
               <div class="notification-box">
                 <ul class="list-inline m-b-0">
                   <li>
-                    <a href="javascript:void(0);" class="right-bar-toggle">
-                      <i class="zmdi zmdi-notifications-none"></i>
-                    </a>
+                    <a href="javascript:void(0);" class="right-bar-toggle"><i class="zmdi zmdi-notifications-none"></i></a>
                     <div class="noti-dot">
                       <span class="dot"></span>
                       <span class="pulse"></span>
@@ -72,22 +81,16 @@
           <!-- User -->
           <div class="user-box">
             <div class="user-img">
-              <img src="assets/images/users/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+              <img src="@imgSrc" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
               <div class="user-status offline"><i class="zmdi zmdi-dot-circle"></i></div>
             </div>
-            <h5><a href="#">Mat Helme</a> </h5>
-            <ul class="list-inline">
-              <li>
-                <a href="#">
-                  <i class="zmdi zmdi-settings"></i>
-                </a>
-              </li>
+            <h5><a href="#">@Nombre</a> </h5>
 
-              <li>
-                <a href="#" class="text-custom">
-                  <i class="zmdi zmdi-power"></i>
-                </a>
-              </li>
+            <ul class="list-inline">
+              <li> <a href="@Url.Action("AdmonCuenta", "Cuenta")"> <i class="zmdi zmdi-settings"></i></a> </li>
+              <li> <a href="@Url.Action("CerrarSesion", "Cuenta")" class="text-custom"> <i class="zmdi zmdi-power"></i></a> </li>
+
+
             </ul>
           </div>
           <!-- End User -->
@@ -225,7 +228,6 @@
       @RenderBody()
     </div>
     <!-- END CENTER MENU -->
-
     <!-- RIGHT MENU -->
     <div class="side-bar right-bar">
       <a href="javascript:void(0);" class="right-bar-toggle">

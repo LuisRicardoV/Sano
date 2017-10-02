@@ -46,6 +46,27 @@ namespace Sano.Repository
             }
         }
 
+
+        public CatUsuarios UpdateImagenUsuario(int idUsuario, byte[] imagen)
+        {
+            List<SqlParameter> param = new List<SqlParameter>();
+            try
+            {
+                param.Add(new SqlParameter("@idUsuario", (idUsuario) > 0 ? (object)idUsuario : DBNull.Value));
+                param.Add(new SqlParameter("@imagen", imagen != null ? (object)imagen : DBNull.Value));
+
+                return context.Database.SqlQuery<CatUsuarios>("exec dbo.Cuenta_ImagenUsuario_Update @idUsuario,@imagen", param.ToArray()).FirstOrDefault();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            finally
+            {
+                param = null;
+            }
+        }
+
         protected virtual void Dispose(bool disposing)
         {
             try

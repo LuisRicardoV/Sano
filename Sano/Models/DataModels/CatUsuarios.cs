@@ -16,5 +16,6 @@ namespace Sano.Models.DataModels
         public string Email { get; set; }
         public Nullable<DateTime> FechaNacimiento { get; set; }
         public byte Estatus { get; set; }
+        public byte[] imagenUsuario { get; set; }
     }
 }

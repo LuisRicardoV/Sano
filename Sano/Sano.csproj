@@ -224,6 +224,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\BaseController.cs" />
+    <Compile Include="Helpers\Identify.cs" />
     <Compile Include="Models\AppModels\SeguridadModel.cs" />
     <Compile Include="Models\AppModels\CuentaModel.cs" />
     <Compile Include="Models\DataModels\CatUsuarios.cs" />
@@ -326,9 +328,10 @@
     <Content Include="Views\Catalogo\Paises.cshtml" />
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Cuenta\AdmonCuenta.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Helpers\" />
+    <Folder Include="Content\Images\" />
     <Folder Include="Views\Administracion\" />
   </ItemGroup>
   <ItemGroup>

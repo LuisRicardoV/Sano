@@ -25,6 +25,7 @@ namespace Sano.Controllers.Cuenta
         [AllowAnonymous]
         public ActionResult IniciarSesion(string returnUrl)
         {
+
             ViewBag.ReturnUrl = returnUrl;
             return View();
         }
@@ -38,6 +39,8 @@ namespace Sano.Controllers.Cuenta
 
             try
             {
+
+
                 using (CuentaRepository repository = new CuentaRepository())
                 {
                     objCatUsuarios = repository.Login(cuenta.Usuario, cuenta.Password);
@@ -46,14 +49,16 @@ namespace Sano.Controllers.Cuenta
                 if (objCatUsuarios != null){
 
                     List<Claim> claim = new List<Claim>();
-                    claim.Add(new Claim("idUsuario", objCatUsuarios.idUsuario.ToString()));
                     claim.Add(new Claim(ClaimTypes.Name, objCatUsuarios.Nombre.ToString()));
+                    claim.Add(new Claim("idUsuario", objCatUsuarios.idUsuario.ToString()));
                     claim.Add(new Claim("Usuario", objCatUsuarios.Usuario.ToString()));
                     claim.Add(new Claim("Nombre", objCatUsuarios.Nombre.ToString()));
                     claim.Add(new Claim("ApellidoPaterno", objCatUsuarios.ApellidoPaterno.ToString()));
                     claim.Add(new Claim("ApellidoMaterno", objCatUsuarios.ApellidoMaterno.ToString()));
                     claim.Add(new Claim("Email", objCatUsuarios.Email.ToString()));
                     claim.Add(new Claim("FechaNacimiento", objCatUsuarios.FechaNacimiento.ToString()));
+                    var imagen = Convert.ToBase64String(objCatUsuarios.imagenUsuario);
+                    claim.Add(new Claim("imagenUsuario", imagen));
 
 
                     var identity = new ClaimsIdentity(claim, DefaultAuthenticationTypes.ApplicationCookie);
@@ -63,6 +68,15 @@ namespace Sano.Controllers.Cuenta
                     //{
                     //    Session["Menu"] = repo.getCatOpcionesMenu(objCatUsuarios.idRol);
                     //}
+
+                    //using (CuentaRepository repository = new CuentaRepository())
+                    //{ 
+                    //    byte[] data = System.IO.File.ReadAllBytes("C:\\z\\avatar-1.jpg");
+                    //    repository.UpdateImagenUsuario(objCatUsuarios.idUsuario, data);
+                    //}
+
+                    
+
 
                     return Json(new { success = true});
 
@@ -88,6 +102,12 @@ namespace Sano.Controllers.Cuenta
         {
             this._auth.SignOut();
             return RedirectToAction("IniciarSesion", "Cuenta");
+        }
+
+        [Authorize]
+        public ActionResult AdmonCuenta()
+        {
+            return View();
         }
 
     }

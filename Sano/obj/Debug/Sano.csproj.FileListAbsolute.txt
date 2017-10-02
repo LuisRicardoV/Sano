@@ -179,6 +179,6 @@ C:\Users\ricardo.velazquez\Source\Repos\Sano\Sano\bin\Microsoft.Owin.Security.OA
 C:\Users\ricardo.velazquez\Source\Repos\Sano\Sano\bin\Microsoft.Owin.Security.Google.xml
 C:\Users\ricardo.velazquez\Source\Repos\Sano\Sano\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Users\ricardo.velazquez\Source\Repos\Sano\Sano\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-C:\Users\ricardo.velazquez\Source\Repos\Sano\Sano\obj\Debug\Sano.csprojResolveAssemblyReference.cache
 C:\Users\ricardo.velazquez\Source\Repos\Sano\Sano\obj\Debug\Sano.dll
 C:\Users\ricardo.velazquez\Source\Repos\Sano\Sano\obj\Debug\Sano.pdb
+C:\Users\ricardo.velazquez\Source\Repos\Sano\Sano\obj\Debug\Sano.csprojResolveAssemblyReference.cache

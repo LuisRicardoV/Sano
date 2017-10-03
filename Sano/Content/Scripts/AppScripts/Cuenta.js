@@ -1,11 +1,8 @@
 ﻿
 window.Cuenta = {
     Init: function (urls) {
-        debugger;
         $.extend(this, urls);
-
         $("#{0}".format("IniciarSesion")).utilsValidation();
-
         window.Cuenta.Init_Buttons();
         window.Cuenta.Init_EnterKey();
     },

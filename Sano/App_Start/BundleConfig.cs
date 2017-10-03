@@ -28,6 +28,7 @@ namespace Sano
                "~/Content/CSS/Layout/Icons.css",
                 "~/Content/CSS/Layout/Resposive.css",
                 "~/Content/CSS/Layout/Core.css",
+                "~/Content/CSS/Layout/dropify.min.css",
                 "~/Content/CSS/Layout/Menu.css"
                ));
 
@@ -46,6 +47,7 @@ namespace Sano
 
             bundles.Add(new ScriptBundle("~/Scripts/Bootstrap").Include(
             "~/Content/Scripts/Bootstrap/bootstrap.min.js",
+            "~/Content/Scripts/Bootstrap/bootstrap-inputmask.min.js",
             "~/Content/Scripts/Bootstrap/respond.js"));
 
             bundles.Add(new ScriptBundle("~/Scripts/Bootstrap/Modernizr").Include(
@@ -54,8 +56,7 @@ namespace Sano
             bundles.Add(new ScriptBundle("~/Scripts/Bootstrap-Notify").Include(
             "~/Content/Scripts/Bootstrap-Notify/bootstrap-notify.js"));
 
-            //bundles.Add(new ScriptBundle("~/Scripts/Bootstrap-Validation").Include(
-            //"~/Content/Scripts/Bootstrap-Validation/validator.min.js"));
+         
 
             bundles.Add(new ScriptBundle("~/Scripts/dataTable").Include(
             "~/Content/Scripts/dataTable/jquery.dataTables.min.js",
@@ -74,6 +75,18 @@ namespace Sano
             "~/Content/Scripts/Site.js",
             "~/Content/Scripts/jqueryExtend.js"));
 
+            bundles.Add(new ScriptBundle("~/Scripts/Layout").Include(
+            "~/Content/Scripts/Layout/detect.js",
+            "~/Content/Scripts/Layout/fastclick.js",
+            "~/Content/Scripts/Layout/jquery.slimscroll.js",
+            "~/Content/Scripts/Layout/jquery.blockUI.js",
+            "~/Content/Scripts/Layout/waves.js",
+            "~/Content/Scripts/Layout/jquery.nicescroll.js",
+            "~/Content/Scripts/Layout/jquery.scrollTo.min.js",
+            "~/Content/Scripts/Layout/dropify.min.js",
+            "~/Content/Scripts/Layout/jquery.core.js",
+            "~/Content/Scripts/Layout/jquery.app.js"));
+
             #endregion
 
             #region Modulos Javascript
@@ -82,9 +95,9 @@ namespace Sano
 
 
             bundles.Add(new ScriptBundle("~/bundles/Cuenta").Include(
-            "~/Content/Scripts/AppScripts/Cuenta/aes.js",
-            "~/Content/Scripts/AppScripts/Cuenta/lockr.js",
-            "~/Content/Scripts/AppScripts/Cuenta/Cuenta.js"
+            "~/Content/Scripts/aes.js",
+            "~/Content/Scripts/lockr.js",
+            "~/Content/Scripts/AppScripts/Cuenta.js"
             ));
 
             #endregion

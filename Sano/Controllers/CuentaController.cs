@@ -104,11 +104,6 @@ namespace Sano.Controllers.Cuenta
             return RedirectToAction("IniciarSesion", "Cuenta");
         }
 
-        [Authorize]
-        public ActionResult AdmonCuenta()
-        {
-            return View();
-        }
-
+      
     }
 }

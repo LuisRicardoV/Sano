@@ -87,7 +87,7 @@
             <h5><a href="#">@Nombre</a> </h5>
 
             <ul class="list-inline">
-              <li> <a href="@Url.Action("AdmonCuenta", "Cuenta")"> <i class="zmdi zmdi-settings"></i></a> </li>
+              <li> <a href="@Url.Action("DatosCuenta", "Configuracion")"> <i class="zmdi zmdi-settings"></i></a> </li>
               <li> <a href="@Url.Action("CerrarSesion", "Cuenta")" class="text-custom"> <i class="zmdi zmdi-power"></i></a> </li>
 
 
@@ -305,14 +305,19 @@
 
     <!-- END RIGHT MENU -->
 
+ 
 
   </div>
 
+  <script>
+            var resizefunc = [];
+  </script>
   @Scripts.Render("~/Scripts/Jquery")
   @Scripts.Render("~/Scripts/Jquery/JqueryValidate")
   @Scripts.Render("~/Scripts/Bootstrap")
   @Scripts.Render("~/Scripts/Bootstrap-Notify")
   @Scripts.Render("~/Scripts/dataTable")
+  @Scripts.Render("~/Scripts/Layout")
   @Scripts.Render("~/Site.js")
 
 

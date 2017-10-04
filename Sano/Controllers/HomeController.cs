@@ -12,7 +12,6 @@ namespace Sano.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            ViewBag.ImagenPerfil = objUsuario.imagenUsuario;
             return View();
         }
 

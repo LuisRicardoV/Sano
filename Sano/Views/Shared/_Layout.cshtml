@@ -312,6 +312,8 @@
   <script>
             var resizefunc = [];
   </script>
+
+
   @Scripts.Render("~/Scripts/Jquery")
   @Scripts.Render("~/Scripts/Jquery/JqueryValidate")
   @Scripts.Render("~/Scripts/Bootstrap")
@@ -321,7 +323,7 @@
   @Scripts.Render("~/Site.js")
 
 
-
+  @RenderSection("Configuracion", required: false)
   @RenderSection("Pais", required: false)
 </body>
 </html>

@@ -83,7 +83,7 @@ namespace Sano
             "~/Content/Scripts/Layout/waves.js",
             "~/Content/Scripts/Layout/jquery.nicescroll.js",
             "~/Content/Scripts/Layout/jquery.scrollTo.min.js",
-            "~/Content/Scripts/Layout/dropify.min.js",
+            "~/Content/Scripts/Layout/dropify.js",
             "~/Content/Scripts/Layout/jquery.core.js",
             "~/Content/Scripts/Layout/jquery.app.js"));
 
@@ -99,6 +99,10 @@ namespace Sano
             "~/Content/Scripts/lockr.js",
             "~/Content/Scripts/AppScripts/Cuenta.js"
             ));
+
+            bundles.Add(new ScriptBundle("~/bundles/Configuracion").Include(
+              "~/Content/Scripts/AppScripts/Configuracion.js"
+          ));
 
             #endregion
         }

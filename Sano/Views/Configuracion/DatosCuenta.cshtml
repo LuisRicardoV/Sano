@@ -23,7 +23,7 @@
           <div class="card-box">
             <h4 class="header-title m-t-0 m-b-30">Tus Datos:</h4>
             <div class="row">
-              @using (Html.BeginForm("GuardarDatos", "Configuracion", FormMethod.Post, new { id = "DatosUsuario", @role = "form", @class = "form-horizontal", @enctype = "multipart/form-data" }))
+              @using (Html.BeginForm("", "", FormMethod.Post, new { id = "DatosUsuario", @role = "form", @class = "form-horizontal", @enctype = "multipart/form-data" }))
               { @*<form class="form-horizontal" role="form">*@
                   <div class="form-group">
                     @Html.LabelFor(m => m.Usuario, new { @class = "col-md-2 control-label" })
@@ -65,11 +65,8 @@
                   </div>
 
                   <div class="form-group" style="text-align:right;padding-right:10px;">
-                    <button type="submit" class="btn btn-primary btn-bordred waves-effect w-md waves-light m-b-5">Guardar</button>
+                    <button type="submit" id="btnGuardarDatos" class="btn btn-primary btn-bordred waves-effect w-md waves-light m-b-5">Guardar</button>
                   </div>
-
-
-
                   @*</form>*@
               }
             </div><!-- end row -->
@@ -78,11 +75,41 @@
         <div class="col-sm-6">
           <div class="card-box">
             <h4 class="header-title m-t-0 m-b-30">Foto de Perfil</h4>
-            <div class="dropify-wrapper has-preview"><div class="dropify-message"><span class="file-icon"></span> <p>Drag and drop a file here or click</p><p class="dropify-error">Ooops, something wrong appended.</p></div><div class="dropify-loader" style="display: none;"></div><div class="dropify-errors-container"><ul></ul></div><input class="dropify" data-default-file="@imgSrc" type="file"><button type="button" class="dropify-clear">Remove</button><div class="dropify-preview" style="display: block;"><span class="dropify-render"><img src="@imgSrc"></span><div class="dropify-infos"><div class="dropify-infos-inner"><p class="dropify-filename"><span class="file-icon"></span> <span class="dropify-filename-inner">1.jpg</span></p><p class="dropify-infos-message">Drag and drop or click to replace</p></div></div></div></div>
-          </div>
+            <input id="FileUpload" class="dropify" type="file">
+
+            <div class="form-group" style="text-align:right;padding-right:10px;padding-top:15px;">
+              <button type="submit" id="btnGuardarImagen" class="btn btn-primary btn-bordred waves-effect w-md waves-light m-b-5">Guardar</button>
+            </div>
         </div><!-- end col -->
       </div>
     </div>
     <!-- end row -->
   </div>
 </div>
+
+@section Configuracion{
+  @Scripts.Render("~/bundles/Configuracion")
+  <script>
+    $(document).ready(function () {
+      Configuracion.Init({
+        UrlGuardarDatos: "@Url.Action("GuardarDatos", "Configuracion")",
+        UrlGuardarImagen: "@Url.Action("GuardarImagen", "Configuracion")",
+      });
+      $('.dropify').dropify({
+          'defaultFileName' :'Usuario.jpg',
+          'defaultFile':'@imgSrc',
+        messages: {
+        
+          'default': 'Arrastra y suelta una imagen o da click',
+          'replace': 'Arrastra y suelta  o click para reemplazar',
+          'remove': 'Remover',
+          'error': 'Lo siento, hubo un error.'
+        },
+        error: {
+          'fileSize': 'El archivo es demasaido  (1M max).'
+        }
+      });
+    });
+  </script>
+
+}

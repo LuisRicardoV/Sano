@@ -47,14 +47,6 @@ namespace Sano.Controllers.Cuenta
                 }
 
                 if (objCatUsuarios != null){
-
-                    //using (CuentaRepository repository = new CuentaRepository())
-                    //{
-                    //    byte[] data = System.IO.File.ReadAllBytes("C:\\z\\avatar-1.jpg");
-                    //    repository.UpdateImagenUsuario(objCatUsuarios.idUsuario, data);
-                    //}
-
-
                     List<Claim> claim = new List<Claim>();
                     claim.Add(new Claim(ClaimTypes.Name, objCatUsuarios.Nombre.ToString()));
                     claim.Add(new Claim("idUsuario", objCatUsuarios.idUsuario.ToString()));
@@ -64,18 +56,11 @@ namespace Sano.Controllers.Cuenta
                     claim.Add(new Claim("ApellidoMaterno", objCatUsuarios.ApellidoMaterno == null ? " " : objCatUsuarios.ApellidoMaterno.ToString()));
                     claim.Add(new Claim("Email", objCatUsuarios.Email == null ? " " : objCatUsuarios.Email.ToString()));  
                     claim.Add(new Claim("FechaNacimiento", objCatUsuarios.FechaNacimiento == null ? " " : objCatUsuarios.FechaNacimiento.ToString()));  
-                    var imagen = Convert.ToBase64String(objCatUsuarios.imagenUsuario);
-                    claim.Add(new Claim("imagenUsuario", imagen));
+                    claim.Add(new Claim("imagenUsuario", objCatUsuarios.imagenUsuario));
 
                     var identity = new ClaimsIdentity(claim, DefaultAuthenticationTypes.ApplicationCookie);
                     this._auth.SignIn(new AuthenticationProperties { IsPersistent = false }, identity);
 
-                    //using (CatOpcionesRepository repo = new CatOpcionesRepository())
-                    //{
-                    //    Session["Menu"] = repo.getCatOpcionesMenu(objCatUsuarios.idRol);
-                    //}
-
-                   
                     return Json(new { success = true});
                 }
                 return Json(new { success = false , message = "101. Ha ocurrido un error, intente mas tarde." });

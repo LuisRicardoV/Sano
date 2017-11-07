@@ -10,31 +10,32 @@ namespace Sano
             #region CSS
             bundles.Add(new StyleBundle("~/CSS/Bootstrap").Include(
                     "~/Content/CSS/Bootstrap/bootstrap.min.css"
-
                     ));
-
 
             bundles.Add(new ScriptBundle("~/CSS/Font_Animate").Include(
                          "~/Content/CSS/Animate/animate.css",
                          "~/Content/CSS/Bootstrap/dataTables.bootstrap.min.css",
                           "~/Content/CSS/Bootstrap/responsive.bootstrap.min.css"
                          ));
+            #endregion
 
+            #region  Modulos CSS
+            bundles.Add(new ScriptBundle("~/Layout").Include(
+             "~/Content/CSS/Layout/Icons.css",
+              "~/Content/CSS/Layout/Resposive.css",
+              "~/Content/CSS/Layout/Core.css",
+              "~/Content/CSS/Layout/dropify.min.css",
+              "~/Content/CSS/Layout/Menu.css"
+             ));
 
             bundles.Add(new ScriptBundle("~/Site").Include(
                  "~/Content/CSS/Site.css"));
 
-            bundles.Add(new ScriptBundle("~/Layout").Include(
-               "~/Content/CSS/Layout/Icons.css",
-                "~/Content/CSS/Layout/Resposive.css",
-                "~/Content/CSS/Layout/Core.css",
-                "~/Content/CSS/Layout/dropify.min.css",
-                "~/Content/CSS/Layout/Menu.css"
-               ));
-
-
             bundles.Add(new StyleBundle("~/CSS/Login").Include(
                     "~/Content/CSS/Login/Login.css"));
+
+            bundles.Add(new StyleBundle("~/CSS/AreaPedido").Include(
+                 "~/Content/CSS/AreaPedido/AreaPedido.css"));
 
             #endregion
 
@@ -56,7 +57,7 @@ namespace Sano
             bundles.Add(new ScriptBundle("~/Scripts/Bootstrap-Notify").Include(
             "~/Content/Scripts/Bootstrap-Notify/bootstrap-notify.js"));
 
-         
+
 
             bundles.Add(new ScriptBundle("~/Scripts/dataTable").Include(
             "~/Content/Scripts/dataTable/jquery.dataTables.min.js",
@@ -102,6 +103,10 @@ namespace Sano
 
             bundles.Add(new ScriptBundle("~/bundles/Configuracion").Include(
               "~/Content/Scripts/AppScripts/Configuracion.js"
+          ));
+
+            bundles.Add(new ScriptBundle("~/bundles/AreaPedido").Include(
+              "~/Content/Scripts/AppScripts/AreaPedido.js"
           ));
 
             #endregion

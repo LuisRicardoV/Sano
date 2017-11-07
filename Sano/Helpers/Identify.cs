@@ -37,7 +37,7 @@ namespace Sano.Helpers
             public string Email { get; set; }
             public DateTime FechaNacimiento { get; set; }
             public byte Estatus { get; set; }
-            public String imagenUsuario { get; set; }
+            public string imagenUsuario { get; set; }
 
         }
     }

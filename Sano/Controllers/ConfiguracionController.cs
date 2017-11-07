@@ -24,6 +24,8 @@ namespace Sano.Controllers
             catusuario.ApellidoMaterno = objUsuario.ApellidoMaterno;
             catusuario.Email = objUsuario.Email;
             catusuario.FechaNacimiento = objUsuario.FechaNacimiento;
+            catusuario.imagenUsuario = objUsuario.imagenUsuario;
+
             return View(catusuario);
         }
 
@@ -49,7 +51,7 @@ namespace Sano.Controllers
             }
             catch (Exception e)
             {
-                Bitacoras.Exceptions(new Exceptions { CodError = 103, Message = e.Message, InnerException = Bitacoras.GetExceptionMessages(e), idUsuario = objUsuario.idUsuario, Usuario = objUsuario.Usuario });
+                Bitacoras.Exceptions(new ExceptionsModel { CodError = 103, Message = e.Message, InnerException = Bitacoras.GetExceptionMessages(e), idUsuario = objUsuario.idUsuario, Usuario = objUsuario.Usuario });
                 return Json(new { success = false, message = "103. No se han guardaron los cambios, intente luego." });
             }
         }
@@ -100,14 +102,13 @@ namespace Sano.Controllers
                         stream.Position = 0;
                         byte[] image = new byte[stream.Length + 1];
                         stream.Read(image, 0, image.Length);
+                        string filename = Encriptacion.Encriptar( "Perfil" + objUsuario.idUsuario);
 
-
+                        System.IO.File.WriteAllBytes(Server.MapPath("/Perfil_images/" + filename + ".jpg"), stream.ToArray());
 
                         using (CuentaRepository repository = new CuentaRepository())
                         {
-                            byte[] data = stream.ToArray();
-                            repository.UpdateImagenUsuario(objUsuario.idUsuario, data);
-                            objUsuario.imagenUsuario = Convert.ToBase64String(data);
+                            repository.UpdateImagenUsuario(objUsuario.idUsuario, filename);
                         }
                     }
 

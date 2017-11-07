@@ -1,0 +1,401 @@
+﻿body, html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: helvetica;
+  font-weight: 100;
+  padding: 0;
+}
+
+.span-link {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  right: 0;
+  -webkit-transition: right 0.4s ease-in-out;
+  -moz-transition: right 0.4s ease-in-out;
+  -ms-transition: right 0.4s ease-in-out;
+  -o-transition: right 0.4s ease-in-out;
+  transition: right 0.4s ease-in-out;
+  padding: 0;
+}
+
+  .container.open-sidebar {
+    right: calc(100% - 45px);
+    right: -webkit-calc(100% - 45px);
+    right: -moz-calc(100% - 45px);
+  }
+
+.swipe-area {
+  position: absolute;
+  width: 45px;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background: #f3f3f3;
+  z-index: 0;
+  border: 1px solid #fff;
+}
+
+#sidebar {
+  background: #2290c9;
+  position: absolute;
+  width: 97%;
+  height: 100%;
+  right: -97%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.main-content {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  position: relative;
+}
+
+  .main-content .content {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding-right: 60px;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../Images/AreaPedido/Floor/Wooden-Floor-Pattern_2.jpg');
+    background-size: 80px 80px;
+  }
+
+    .main-content .content h1 {
+      font-weight: 100;
+    }
+
+    .main-content .content p {
+      width: 100%;
+      line-height: 160%;
+    }
+
+  .main-content #icon-toggle {
+    border-radius: 3px;
+    display: block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+  }
+
+  .main-content #sidebar-toggle {
+    background: #2290c9;
+    border-radius: 3px;
+    display: block;
+    position: relative;
+    padding: 10px 7px;
+    margin-right: 5px;
+    margin-top: 5px;
+    float: right;
+  }
+
+
+
+    .main-content #sidebar-toggle .bar {
+      display: block;
+      width: 20px;
+      margin-bottom: 3px;
+      height: 2px;
+      background-color: #fff;
+      border-radius: 1px;
+    }
+
+      .main-content #sidebar-toggle .bar:last-child {
+        margin-bottom: 0;
+      }
+
+.icon-table-furniture {
+  background-image: url('../../Images/AreaPedido/Table/Table-4.png');
+  background-size: 100px 100px;
+  position: absolute;
+  top: 400px;
+  left: 200px;
+  height: 100px;
+  width: 100px;
+}
+
+
+/*Transparencia en Buttons*/
+.icon-button {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  border: 0;
+  background: transparent;
+}
+
+
+
+
+/***************NOTEPAD**************/
+#menu {
+  /*width: 50%;
+    height: 100%;*/
+  background-color: #fff;
+}
+
+#menu-container, #menu-container-PADNUMERICO, #menu-container-COMPLEMENTOS {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+}
+
+#ticket {
+  /*width: 50%;*/
+  /*height: 100%;*/
+  background-color: #808080;
+}
+
+
+
+
+/****************PAD NUMERICO********************/
+
+.content-PADNUMERICO {
+  width: 390px;
+  margin: 20px auto 0;
+  margin-top: 185px;
+}
+
+.calculator-PADNUMERICO {
+  width: 390px;
+  height: auto;
+  padding: 10px 0;
+  margin: auto;
+  /* background: #fff; */
+  /* border: #000 1px solid; */
+  /* border-radius: 7px; */
+  /* -webkit-border-radius: 7px; */
+  -moz-border-radius: 7px;
+  /* box-shadow: rgba(0,0,0,0.4) 0px 2px 5px, inset rgba(255,255,255,0.9) 0px 1px 1px -1px; */
+  /* -webkit-box-shadow: rgba(0,0,0,0.4) 0px 2px 5px, inset rgba(255,255,255,0.9) 0px 1px 1px -1px; */
+  -moz-box-shadow: rgba(0,0,0,0.4) 0px 2px 5px, inset rgba(255,255,255,0.9) 0px 1px 1px -1px;
+  background-image: -moz-linear-gradient(top, #333333, #1f1f1f);
+  /* background-image: -webkit-linear-gradient(top, #333333, #1f1f1f); */
+  background-image: linear-gradient(top, #333333, #1f1f1f);
+  /* overflow: hidden; */
+  text-align: center;
+}
+
+.screen-PADNUMERICO {
+  width: 312px;
+  height: 93px;
+  margin: 12px auto 30px;
+  padding: 15px 20px;
+  color: #000;
+  text-align: right;
+  font-size: 3em;
+  letter-spacing: 3px;
+  overflow: hidden;
+  border: #000 1px solid;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  box-shadow: inset rgba(0,0,0,1) 0px 1px 4px, inset rgba(225,225,225,0.3) 0px -2px 4px -2px;
+  -webkit-box-shadow: inset rgba(0,0,0,1) 0px 1px 4px, inset rgba(225,225,225,0.3) 0px -2px 4px -2px;
+  -moz-box-shadow: inset rgba(0,0,0,1) 0px 1px 4px, inset rgba(225,225,225,0.3) 0px -2px 4px -2px;
+  background-image: -moz-linear-gradient(top, #3e3e3e 0%, #303030 100%);
+  background-image: -webkit-linear-gradient(top, #0%, #303030 100%);
+  background-image: linear-gradient(top, #3e3e3e 0%, #303030 100%);
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.buttons-PADNUMERICO {
+  padding: 0;
+  width: 324px;
+  margin: auto;
+  overflow: hidden;
+  list-style: none;
+}
+
+  .buttons-PADNUMERICO li {
+    display: inline;
+    float: left;
+    padding: 0px;
+    margin-right: 13px;
+    margin-bottom: 10px;
+  }
+
+    .buttons-PADNUMERICO li:nth-child(4n) {
+      margin-right: 0;
+    }
+
+  .buttons-PADNUMERICO a {
+    display: block;
+    width: 95px;
+    height: 68px;
+    padding: 18px 0 12px;
+    color: #000 !important;
+    font-family: "Myriad Pro", Arial, sans-serif;
+    font-size: 1.6em;
+    font-weight: 500;
+    letter-spacing: -2px;
+    /* background-color: #2f2f2f; */
+    /* border: #000 1px solid; */
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    /* text-shadow: #000 0px -1px 0px; */
+    box-shadow: inset rgba(255,255,255,0.1) 0px 1px 0px, inset rgba(0,0,0,0.2) 0px -2px 2px;
+    /* -webkit-box-shadow: inset rgba(255,255,255,0.1) 0px 1px 0px, inset rgba(0,0,0,0.2) 0px -2px 2px; */
+    -moz-box-shadow: inset rgba(255,255,255,0.1) 0px 1px 0px, inset rgba(0,0,0,0.2) 0px -2px 2px;
+    background-image: -moz-linear-gradient(top, #363636 0%, #313234 40%, #2f2f2f 100%);
+    background-image: -webkit-linear-gradient(top, #D3D3D3 0%, #D3D3D3 40%, #D3D3D3 100%);
+    background-image: linear-gradient(top, #363636 0%, #313234 40%, #2f2f2f 100%);
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+
+    .buttons-PADNUMERICO a:active {
+      box-shadow: inset rgba(0,0,0,0.5) 0px 2px 8px;
+      background-image: -moz-linear-gradient(top, #2f2f2f 0%, #363636 100%);
+      background-image: -webkit-linear-gradient(top, #2f2f2f 0%, #363636 100%);
+      background-image: linear-gradient(top, #2f2f2f 0%, #363636 100%);
+    }
+
+.tall-PADNUMERICO {
+  height: 151px !important;
+}
+
+.wide-PADNUMERICO {
+  width: 205px !important;
+}
+
+.shift-PADNUMERICO {
+  margin-top: -78px;
+}
+
+.ctrls-PADNUMERICO {
+  list-style: none;
+  margin: 5px 0 0 20px;
+  padding: 0;
+  position: absolute;
+}
+
+  .ctrls-PADNUMERICO li {
+    float: left;
+    display: inline;
+  }
+
+    .ctrls-PADNUMERICO li a {
+      display: block;
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+      border-radius: 100%;
+      box-shadow: rgba(255,255,255,0.3) 0px 0px 1px, inset rgba(0,0,0,1) 0px 1px 2px 1px;
+      background-image: -moz-radial-gradient( 9px -4px, #FFF 0px, #fff 2px, rgba(255,255,255,0) 4px), -moz-linear-gradient(bottom, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%);
+      background-image: -webkit-radial-gradient( 9px -4px, #FFF 0px, #fff 2px, rgba(255,255,255,0) 4px), -webkit-linear-gradient(bottom, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%);
+      background-image: radial-gradient( 9px -4px, #FFF 0px, #fff 2px, rgba(255,255,255,0) 4px), linear-gradient(bottom, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 100%);
+    }
+
+/*Images Checks*/
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+}
+
+input[type="checkbox"][id^="cb"] {
+  display: none;
+}
+
+label {
+  border: 1px solid #fff;
+  padding: 10px;
+  display: block;
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+}
+
+  label:before {
+    background-color: white;
+    color: white;
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    border: 1px solid grey;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    line-height: 28px;
+    transition-duration: 0.4s;
+    transform: scale(0);
+  }
+
+  label img {
+    height: 100px;
+    width: 100px;
+    transition-duration: 0.2s;
+    transform-origin: 50% 50%;
+  }
+
+:checked + label {
+  border-color: #ddd;
+}
+
+  :checked + label:before {
+    content: "✓";
+    background-color: grey;
+    transform: scale(1);
+  }
+
+  :checked + label img {
+    transform: scale(0.9);
+    box-shadow: 0 0 5px #333;
+    z-index: -1;
+  }
+
+.btnAdd {
+  box-shadow: rgb(159, 180, 242) 0px 1px 3px 0px inset;
+  background: linear-gradient(rgb(120, 146, 194) 5%, rgb(71, 110, 158) 100%) rgb(120, 146, 194);
+  border-radius: 5px;
+  border: 1px solid rgb(78, 96, 150);
+  display: inline-block;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-family: Arial;
+  font-size: 21px;
+  padding: 10px 24px;
+  text-decoration: none;
+  text-shadow: rgb(40, 57, 102) 0px -1px 0px;
+}
+
+.btnBack {
+  box-shadow: rgb(207, 134, 108) 0px 1px 3px 0px inset;
+  background: linear-gradient(rgb(208, 69, 27) 5%, rgb(188, 51, 21) 100%) rgb(208, 69, 27);
+  border-radius: 5px;
+  border: 1px solid rgb(148, 41, 17);
+  display: inline-block;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-family: Arial;
+  font-size: 21px;
+  padding: 10px 24px;
+  text-decoration: none;
+  text-shadow: rgb(133, 70, 41) 0px -1px 0px;
+}

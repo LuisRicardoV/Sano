@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Sano.Models.AppModels
 {
-    public class Exceptions
+    public class ExceptionsModel
     {
         public int CodError { get; set; }
         public string Message { get; set; }

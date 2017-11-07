@@ -222,13 +222,15 @@
     <Compile Include="Controllers\ConfiguracionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\CuentaController.cs" />
+    <Compile Include="Controllers\AreaPedidoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\BaseController.cs" />
     <Compile Include="Helpers\Bitacoras.cs" />
+    <Compile Include="Helpers\Encriptacion.cs" />
     <Compile Include="Helpers\Identify.cs" />
-    <Compile Include="Models\AppModels\Exceptions.cs" />
+    <Compile Include="Models\AppModels\ExceptionsModel.cs" />
     <Compile Include="Models\AppModels\SeguridadModel.cs" />
     <Compile Include="Models\AppModels\CuentaModel.cs" />
     <Compile Include="Models\DataModels\CatUsuarios.cs" />
@@ -254,11 +256,31 @@
     <Content Include="Content\CSS\Layout\Menu.css" />
     <Content Include="Content\CSS\Layout\Resposive.css" />
     <Content Include="Content\CSS\Login\Login.css" />
+    <Content Include="Content\CSS\AreaPedido\AreaPedido.css" />
     <Content Include="Content\Fonts\dropify.svg" />
     <Content Include="Content\Fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Content\Images\AreaPedido\Items\bebidas.jpg" />
+    <Content Include="Content\Images\AreaPedido\Items\catsup.jpg" />
+    <Content Include="Content\Images\AreaPedido\Items\ensalada.jpg" />
+    <Content Include="Content\Images\AreaPedido\Items\ham1.jpg" />
+    <Content Include="Content\Images\AreaPedido\Items\ham2.jpg" />
+    <Content Include="Content\Images\AreaPedido\Items\ham3.jpg" />
+    <Content Include="Content\Images\AreaPedido\Items\hams.jpg" />
+    <Content Include="Content\Images\AreaPedido\Items\mayonesa.jpg" />
+    <Content Include="Content\Images\AreaPedido\Items\pepinillos.jpg" />
+    <Content Include="Content\Images\AreaPedido\Items\postres.jpg" />
+    <Content Include="Content\Images\AreaPedido\Items\tacos.jpg" />
+    <Content Include="Content\Images\Examples\fjords.jpg" />
+    <Content Include="Content\Images\Examples\lights.jpg" />
+    <Content Include="Content\Images\Examples\nature.jpg" />
+    <Content Include="Content\Images\AreaPedido\Floor\Wooden-Floor-Pattern.jpg" />
+    <Content Include="Content\Images\AreaPedido\Floor\Wooden-Floor-Pattern_2.jpg" />
+    <Content Include="Content\Images\AreaPedido\Menu\BackgroundCarta.png" />
+    <Content Include="Content\Images\AreaPedido\Table\Table-4.png" />
     <Content Include="Content\Scripts\aes.js" />
     <Content Include="Content\Scripts\AppScripts\Configuracion.js" />
     <Content Include="Content\Scripts\AppScripts\Cuenta.js" />
+    <Content Include="Content\Scripts\AppScripts\AreaPedido.js" />
     <Content Include="Content\Scripts\Layout\dropify.js" />
     <Content Include="Content\Scripts\lockr.js" />
     <Content Include="Content\Scripts\Bootstrap-Notify\bootstrap-notify.js" />
@@ -352,9 +374,10 @@
     <Content Include="Views\Shared\_LayoutLogin.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Configuracion\DatosCuenta.cshtml" />
+    <Content Include="Views\AreaPedido\Main.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\Images\" />
+    <Folder Include="Perfil_images\" />
     <Folder Include="Views\Administracion\" />
   </ItemGroup>
   <ItemGroup>

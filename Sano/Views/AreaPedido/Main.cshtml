@@ -1,0 +1,210 @@
+﻿@{
+    Layout = null;
+}
+@Styles.Render("~/CSS/Bootstrap")
+@Styles.Render("~/CSS/AreaPedido")
+
+<div class="container">
+  <div id="sidebar">
+    <div class="row">
+      <div class="col-md-6" id="menu">
+        <div id="menu-container">
+          <h2>Menu</h2>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <a class="item-menu" href="#">
+                  <img src="~/Content/Images/AreaPedido/Items/hams.jpg" alt="Hamburguesas" style="width:100%">
+                  <div class="caption">
+                    <h4>Hamburguesas</h4>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <a class="item-menu" href="#">
+                  <img src="~/Content/Images/AreaPedido/Items/tacos.jpg" alt="Tacos" style="width:100%">
+                  <div class="caption">
+                    <h4>Tacos</h4>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <a class="item-menu" href="#">
+                  <img src="~/Content/Images/AreaPedido/Items/ensalada.jpg" alt="Ensalada" style="width:100%">
+                  <div class="caption">
+                    <h4>Ensaladas</h4>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <a class="item-menu" href="#">
+                  <img src="~/Content/Images/AreaPedido/Items/promociones.jpg" alt="Promociones" style="width:100%">
+                  <div class="caption">
+                    <h4>Promociones</h4>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <a class="item-menu" href="#">
+                  <img src="~/Content/Images/AreaPedido/Items/bebidas.jpg" alt="Bebidas" style="width:100%">
+                  <div class="caption">
+                    <h4>Bebidas</h4>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="thumbnail">
+                <a class="item-menu" href="#">
+                  <img src="~/Content/Images/AreaPedido/Items/postres.jpg" alt="Postres" style="width:100%">
+                  <div class="caption">
+                    <h4>Postres</h4>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+
+        <div id="menu-container-PADNUMERICO" style="display:none;">
+          <div class="content-PADNUMERICO">
+            <div class="calculator-PADNUMERICO">
+              <ul class="buttons-PADNUMERICO">
+                <li class="screen-PADNUMERICO" style="padding-top:26px;padding-right:10px;"></li>
+              </ul>
+              <input type="hidden" value="" class="outcome-PADNUMERICO" />
+              <ul class="buttons-PADNUMERICO">
+                <li><a href="7" class="val-PADNUMERICO">7</a></li>
+                <li><a href="8" class="val-PADNUMERICO">8</a></li>
+                <li><a href="9" class="val-PADNUMERICO">9</a></li>
+              </ul>
+              <ul class="buttons-PADNUMERICO">
+                <li><a href="4" class="val-PADNUMERICO">4</a></li>
+                <li><a href="5" class="val-PADNUMERICO">5</a></li>
+                <li><a href="6" class="val-PADNUMERICO">6</a></li>
+              </ul>
+              <ul class="buttons-PADNUMERICO">
+                <li><a href="1" class="val-PADNUMERICO">1</a></li>
+                <li><a href="2" class="val-PADNUMERICO">2</a></li>
+                <li><a href="3" class="val-PADNUMERICO">3</a></li>
+              </ul>
+              <ul class="buttons-PADNUMERICO">
+                <li><a href="#" class="val-PADNUMERICO-ENTER" style="width:203px;font-size:15px;font-family:Arial, Helvetica, sans-serif">ACEPTAR</a></li>
+                <li><a href="#" class="val-PADNUMERICO-DELETE" style="font-size:15px;font-family:Arial, Helvetica, sans-serif">BORRAR</a></li>
+              </ul>
+              @*<ul class="buttons-PADNUMERICO">
+                  <li><a href="0" class="val wide-PADNUMERICO shift-PADNUMERICO">0</a></li>
+                  <li><a href="." class="val shift-PADNUMERICO">.</a></li>
+                </ul>*@
+            </div>
+            <div class="row" style="height:20%;text-align: center;">
+              <button id="BtnBackMenu" class="btnBack">Regresar</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="menu-container-COMPLEMENTOS" style="display:none;">
+          <h2>Complementos</h2>
+          <div class="row" style="height:80%">
+            <ul>
+              <li>
+                <input type="checkbox" id="cb1" checked />
+                <label for="cb1"><img src="~/Content/Images/AreaPedido/Items/mayonesa.jpg" /></label>
+                <span style="display:block;text-align:center">Mayonesa</span>
+              </li>
+              <li>
+                <input type="checkbox" id="cb2" checked />
+                <label for="cb2"><img src="~/Content/Images/AreaPedido/Items/catsup.jpg" /></label>
+                <span style="display:block;text-align:center">Pan</span>
+              </li>
+              <li>
+                <input type="checkbox" id="cb3" checked />
+                <label for="cb3"><img src="~/Content/Images/AreaPedido/Items/pepinillos.jpg" /></label>
+                <span style="display:block;text-align:center">Catsup</span>
+              </li>
+            </ul>
+          </div>
+          <div class="row" style="height:20%;text-align: center;">
+            <button id="BtnAdd" class="btnAdd">Agregar</button>
+            <button id="BtnBack" class="btnBack">Regresar</button>
+          </div>
+        </div>
+
+        <div id="menu-container-PLATILLO" style="display:none;">
+          <h2>Hamburguesas</h2>
+          <div class="row" style="height:80%">
+            <ul>
+              <li>
+                <label class="Platillo"><img src="~/Content/Images/AreaPedido/Items/ham1.jpg" /></label>
+                <span  style="display:block;text-align:center">Hamburguesa Sencilla</span>
+              </li>
+              <li>
+                <label class="Platillo"><img src="~/Content/Images/AreaPedido/Items/ham2.jpg" /></label>
+                <span  style="display:block;text-align:center">Doble</span>
+              </li>
+              <li>
+                <label class="Platillo"><img src="~/Content/Images/AreaPedido/Items/ham3.jpg" /></label>
+                <span  style="display:block;text-align:center">Hawaina</span>
+              </li>
+            </ul>
+          </div>
+          <div class="row" style="height:20%;text-align: center;">
+            <button id="BtnBackMenu"class="btnBack">Regresar</button>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-md-6" id="ticket">
+      </div>
+    </div>
+
+  </div>
+  <div class="main-content">
+    <div class="swipe-area">
+      <a href="#" data-toggle=".container" id="sidebar-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+    </div>
+
+    <div class="content">
+      <div class="icon-table-furniture">
+        <a href="#" data-toggle=".container" id="icon-toggle"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+@Scripts.Render("~/Scripts/Jquery")
+@Scripts.Render("~/Scripts/Jquery/JqueryValidate")
+@Scripts.Render("~/Scripts/Bootstrap")
+@Scripts.Render("~/Scripts/Bootstrap-Notify")
+@Scripts.Render("~/Scripts/dataTable")
+@Scripts.Render("~/bundles/AreaPedido")
+
+<script>
+  $(document).ready(function () {
+    AreaPedido.Init();
+  });
+</script>
+
+
+
+
+
+
+

@@ -1,17 +1,8 @@
-﻿@using Sano.Models.DataModels
-@model CatUsuarios
+﻿@model Sano.Models.DataModels.CatUsuarios
 
 @{
-
     ViewBag.Title = "Administracion de Cuenta";
-    var claimsIdentity = User.Identity as System.Security.Claims.ClaimsIdentity;
-    var imgSrc = "";
-    if (claimsIdentity != null)
-    {
-      var imagenUsuario = claimsIdentity.Claims.Where(x => x.Type == "imagenUsuario").Select(x => x.Value).SingleOrDefault();
-      imgSrc = String.Format("data:image/gif;base64,{0}", imagenUsuario);
-    }
-
+    var rutaImagen = "../../Perfil_images/" + Model.imagenUsuario + ".jpg";
 };
 
 
@@ -24,7 +15,7 @@
             <h4 class="header-title m-t-0 m-b-30">Tus Datos:</h4>
             <div class="row">
               @using (Html.BeginForm("", "", FormMethod.Post, new { id = "DatosUsuario", @role = "form", @class = "form-horizontal", @enctype = "multipart/form-data" }))
-              { @*<form class="form-horizontal" role="form">*@
+              {
                   <div class="form-group">
                     @Html.LabelFor(m => m.Usuario, new { @class = "col-md-2 control-label" })
                     <div class="col-md-10">
@@ -67,11 +58,10 @@
                   <div class="form-group" style="text-align:right;padding-right:10px;">
                     <button type="submit" id="btnGuardarDatos" class="btn btn-primary btn-bordred waves-effect w-md waves-light m-b-5">Guardar</button>
                   </div>
-                  @*</form>*@
               }
-            </div><!-- end row -->
+            </div>
           </div>
-        </div><!-- end col -->
+        </div>
         <div class="col-sm-6">
           <div class="card-box">
             <h4 class="header-title m-t-0 m-b-30">Foto de Perfil</h4>
@@ -80,10 +70,10 @@
             <div class="form-group" style="text-align:right;padding-right:10px;padding-top:15px;">
               <button type="submit" id="btnGuardarImagen" class="btn btn-primary btn-bordred waves-effect w-md waves-light m-b-5">Guardar</button>
             </div>
-        </div><!-- end col -->
+          </div>
+        </div>
       </div>
-    </div>
-    <!-- end row -->
+      </div>
   </div>
 </div>
 
@@ -96,10 +86,10 @@
         UrlGuardarImagen: "@Url.Action("GuardarImagen", "Configuracion")",
       });
       $('.dropify').dropify({
-          'defaultFileName' :'Usuario.jpg',
-          'defaultFile':'@imgSrc',
+        'defaultFileName': 'Usuario.jpg',
+        'defaultFile': '@rutaImagen',
         messages: {
-        
+
           'default': 'Arrastra y suelta una imagen o da click',
           'replace': 'Arrastra y suelta  o click para reemplazar',
           'remove': 'Remover',

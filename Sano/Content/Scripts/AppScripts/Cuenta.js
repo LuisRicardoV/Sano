@@ -8,9 +8,6 @@ window.Cuenta = {
     },
     Init_Buttons: function () {
         $("body").on("click", "#btnIngresar", Cuenta.GetLogin);
-
-
-
     },
     Init_EnterKey: function () {
         $("#Usuario").keypress(function (e) {

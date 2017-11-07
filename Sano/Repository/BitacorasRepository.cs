@@ -26,7 +26,7 @@ namespace Sano.Repository
             }
         }
 
-        public void Exceptions(Exceptions ex)
+        public void Exceptions(ExceptionsModel ex)
         {
             List<SqlParameter> param = new List<SqlParameter>();
             try
@@ -37,7 +37,7 @@ namespace Sano.Repository
                 param.Add(new SqlParameter("@idUsuario", ex.idUsuario > 0 ? (object)ex.idUsuario : 0));
                 param.Add(new SqlParameter("@Usuario", !string.IsNullOrEmpty(ex.Usuario) ? (object)ex.InnerException : DBNull.Value));
 
-                context.Database.SqlQuery<Exceptions>("exec dbo.Bitacora_Exceptions_Insert @CodError,@Message,@InnerException,@idUsuario,@Usuario", param.ToArray()).FirstOrDefault();
+                context.Database.SqlQuery<ExceptionsModel>("exec dbo.Bitacora_Exceptions_Insert @CodError,@Message,@InnerException,@idUsuario,@Usuario", param.ToArray()).FirstOrDefault();
             }
             catch (Exception e)
             {

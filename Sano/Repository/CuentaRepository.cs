@@ -47,13 +47,13 @@ namespace Sano.Repository
         }
 
 
-        public CatUsuarios UpdateImagenUsuario(int idUsuario, byte[] imagen)
+        public CatUsuarios UpdateImagenUsuario(int idUsuario, string imagen)
         {
             List<SqlParameter> param = new List<SqlParameter>();
             try
             {
                 param.Add(new SqlParameter("@idUsuario", (idUsuario) > 0 ? (object)idUsuario : DBNull.Value));
-                param.Add(new SqlParameter("@imagen", imagen != null ? (object)imagen : DBNull.Value));
+                param.Add(new SqlParameter("@imagen", !string.IsNullOrEmpty(imagen) ? (object)imagen : DBNull.Value));
 
                 return context.Database.SqlQuery<CatUsuarios>("exec dbo.Cuenta_ImagenUsuario_Update @idUsuario,@imagen", param.ToArray()).FirstOrDefault();
             }

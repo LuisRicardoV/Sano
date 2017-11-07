@@ -9,7 +9,7 @@ namespace Sano.Helpers
 {
     public  static class Bitacoras
     {
-        public static void Exceptions(Exceptions ex)
+        public static void Exceptions(ExceptionsModel ex)
         {
             using (BitacorasRepository  cx = new BitacorasRepository())
             {

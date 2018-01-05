@@ -218,6 +218,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Controllers\AnalisisController.cs" />
     <Compile Include="Controllers\CatalogoController.cs" />
     <Compile Include="Controllers\ConfiguracionController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -233,11 +234,13 @@
     <Compile Include="Models\AppModels\ExceptionsModel.cs" />
     <Compile Include="Models\AppModels\SeguridadModel.cs" />
     <Compile Include="Models\AppModels\CuentaModel.cs" />
+    <Compile Include="Models\AppModels\TradesModel.cs" />
     <Compile Include="Models\DataModels\CatUsuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\BitacorasRepository.cs" />
     <Compile Include="Repository\ConfiguracionRepository.cs" />
     <Compile Include="Repository\CuentaRepository.cs" />
+    <Compile Include="Repository\TradesRepository.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -250,6 +253,7 @@
     <Content Include="Content\CSS\Bootstrap\dataTables.bootstrap.min.css" />
     <Content Include="Content\CSS\Bootstrap\responsive.bootstrap.min.css" />
     <Content Include="Content\CSS\Font-Awesome\font-awesome.css" />
+    <Content Include="Content\CSS\Layout\components.css" />
     <Content Include="Content\CSS\Layout\Core.css" />
     <Content Include="Content\CSS\Layout\dropify.min.css" />
     <Content Include="Content\CSS\Layout\Icons.css" />
@@ -278,10 +282,12 @@
     <Content Include="Content\Images\AreaPedido\Menu\BackgroundCarta.png" />
     <Content Include="Content\Images\AreaPedido\Table\Table-4.png" />
     <Content Include="Content\Scripts\aes.js" />
+    <Content Include="Content\Scripts\AppScripts\Analisis.js" />
     <Content Include="Content\Scripts\AppScripts\Configuracion.js" />
     <Content Include="Content\Scripts\AppScripts\Cuenta.js" />
     <Content Include="Content\Scripts\AppScripts\AreaPedido.js" />
     <Content Include="Content\Scripts\Layout\dropify.js" />
+    <Content Include="Content\Scripts\Layout\jquery.knob.js" />
     <Content Include="Content\Scripts\lockr.js" />
     <Content Include="Content\Scripts\Bootstrap-Notify\bootstrap-notify.js" />
     <Content Include="Content\Scripts\Bootstrap-Validation\bootstrap.min.js" />
@@ -375,6 +381,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Configuracion\DatosCuenta.cshtml" />
     <Content Include="Views\AreaPedido\Main.cshtml" />
+    <Content Include="Views\Analisis\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Perfil_images\" />

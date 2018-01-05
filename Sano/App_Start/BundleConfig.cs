@@ -25,6 +25,7 @@ namespace Sano
               "~/Content/CSS/Layout/Resposive.css",
               "~/Content/CSS/Layout/Core.css",
               "~/Content/CSS/Layout/dropify.min.css",
+              "~/Content/CSS/Layout/components.css",
               "~/Content/CSS/Layout/Menu.css"
              ));
 
@@ -85,6 +86,7 @@ namespace Sano
             "~/Content/Scripts/Layout/jquery.nicescroll.js",
             "~/Content/Scripts/Layout/jquery.scrollTo.min.js",
             "~/Content/Scripts/Layout/dropify.js",
+             "~/Content/Scripts/Layout/jquery.knob.js",
             "~/Content/Scripts/Layout/jquery.core.js",
             "~/Content/Scripts/Layout/jquery.app.js"));
 
@@ -108,6 +110,10 @@ namespace Sano
             bundles.Add(new ScriptBundle("~/bundles/AreaPedido").Include(
               "~/Content/Scripts/AppScripts/AreaPedido.js"
           ));
+
+            bundles.Add(new ScriptBundle("~/bundles/Analisis").Include(
+           "~/Content/Scripts/AppScripts/Analisis.js"
+       ));
 
             #endregion
         }
